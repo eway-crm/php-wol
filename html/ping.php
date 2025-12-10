@@ -2,8 +2,8 @@
 	include_once 'auth.php';
 	$auth = new Auth();
 	
+	$status = null;
 	if($auth->hasLevel(1)){
-		$status = null;
 		if(isset($_POST['ip'])){
 			$pingresult = exec("ping -c 3 {$_POST['ip']}", $outcome, $status);
 			if (0 == $status) {
